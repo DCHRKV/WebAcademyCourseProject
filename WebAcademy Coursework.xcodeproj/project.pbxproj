@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2701A48B2871FC3400EB98FF /* HomeScreenPersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701A4892871FC3400EB98FF /* HomeScreenPersonTableViewCell.swift */; };
+		2701A48C2871FC3400EB98FF /* HomeScreenPersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2701A48A2871FC3400EB98FF /* HomeScreenPersonTableViewCell.xib */; };
+		2728BCF128735C5F003490C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728BCF028735C5F003490C0 /* User.swift */; };
+		2728BCF42873710A003490C0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728BCF32873710A003490C0 /* API.swift */; };
 		27DF0A692863637200451169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF0A682863637200451169 /* AppDelegate.swift */; };
 		27DF0A6B2863637200451169 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF0A6A2863637200451169 /* SceneDelegate.swift */; };
-		27DF0A6D2863637200451169 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF0A6C2863637200451169 /* ViewController.swift */; };
+		27DF0A6D2863637200451169 /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF0A6C2863637200451169 /* HomeScreenController.swift */; };
 		27DF0A702863637200451169 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF0A6E2863637200451169 /* Main.storyboard */; };
 		27DF0A722863637600451169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27DF0A712863637600451169 /* Assets.xcassets */; };
 		27DF0A752863637600451169 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF0A732863637600451169 /* LaunchScreen.storyboard */; };
+		E54732EB18FB270F4D4C5C1E /* Pods_WebAcademy_Coursework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAB5416C6E534326A774278 /* Pods_WebAcademy_Coursework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FAB5416C6E534326A774278 /* Pods_WebAcademy_Coursework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebAcademy_Coursework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2701A4892871FC3400EB98FF /* HomeScreenPersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPersonTableViewCell.swift; sourceTree = "<group>"; };
+		2701A48A2871FC3400EB98FF /* HomeScreenPersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenPersonTableViewCell.xib; sourceTree = "<group>"; };
+		2728BCF028735C5F003490C0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2728BCF32873710A003490C0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		27DF0A652863637200451169 /* WebAcademy Coursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebAcademy Coursework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF0A682863637200451169 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27DF0A6A2863637200451169 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		27DF0A6C2863637200451169 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27DF0A6C2863637200451169 /* HomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
 		27DF0A6F2863637200451169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27DF0A712863637600451169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27DF0A742863637600451169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27DF0A762863637600451169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481F4661C2903D6BE1489645 /* Pods-WebAcademy Coursework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebAcademy Coursework.release.xcconfig"; path = "Target Support Files/Pods-WebAcademy Coursework/Pods-WebAcademy Coursework.release.xcconfig"; sourceTree = "<group>"; };
+		FFE8E03690AF285843596091 /* Pods-WebAcademy Coursework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebAcademy Coursework.debug.xcconfig"; path = "Target Support Files/Pods-WebAcademy Coursework/Pods-WebAcademy Coursework.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,72 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54732EB18FB270F4D4C5C1E /* Pods_WebAcademy_Coursework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		077CDA070DEDADA3475852E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FAB5416C6E534326A774278 /* Pods_WebAcademy_Coursework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2728BCEC28735676003490C0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				27DF0A6E2863637200451169 /* Main.storyboard */,
+				2701A48A2871FC3400EB98FF /* HomeScreenPersonTableViewCell.xib */,
+				27DF0A732863637600451169 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2728BCEE287356CE003490C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27DF0A682863637200451169 /* AppDelegate.swift */,
+				27DF0A6A2863637200451169 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2728BCEF28735B66003490C0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				27DF0A6C2863637200451169 /* HomeScreenController.swift */,
+				2701A4892871FC3400EB98FF /* HomeScreenPersonTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2728BCF228735C65003490C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2728BCF028735C5F003490C0 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2728BCF528737168003490C0 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2728BCF32873710A003490C0 /* API.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
 		27DF0A5C2863637200451169 = {
 			isa = PBXGroup;
 			children = (
 				27DF0A672863637200451169 /* WebAcademy Coursework */,
 				27DF0A662863637200451169 /* Products */,
+				C778D523172C1745C4700C6A /* Pods */,
+				077CDA070DEDADA3475852E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +123,24 @@
 		27DF0A672863637200451169 /* WebAcademy Coursework */ = {
 			isa = PBXGroup;
 			children = (
-				27DF0A682863637200451169 /* AppDelegate.swift */,
-				27DF0A6A2863637200451169 /* SceneDelegate.swift */,
-				27DF0A6C2863637200451169 /* ViewController.swift */,
-				27DF0A6E2863637200451169 /* Main.storyboard */,
+				2728BCEF28735B66003490C0 /* ViewControllers */,
+				2728BCEC28735676003490C0 /* Storyboards */,
+				2728BCF228735C65003490C0 /* Model */,
+				2728BCF528737168003490C0 /* Model Controller */,
+				2728BCEE287356CE003490C0 /* Resources */,
 				27DF0A712863637600451169 /* Assets.xcassets */,
-				27DF0A732863637600451169 /* LaunchScreen.storyboard */,
 				27DF0A762863637600451169 /* Info.plist */,
 			);
 			path = "WebAcademy Coursework";
+			sourceTree = "<group>";
+		};
+		C778D523172C1745C4700C6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFE8E03690AF285843596091 /* Pods-WebAcademy Coursework.debug.xcconfig */,
+				481F4661C2903D6BE1489645 /* Pods-WebAcademy Coursework.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27DF0A792863637600451169 /* Build configuration list for PBXNativeTarget "WebAcademy Coursework" */;
 			buildPhases = (
+				C5CD61DBDE4A99C516FE8458 /* [CP] Check Pods Manifest.lock */,
 				27DF0A612863637200451169 /* Sources */,
 				27DF0A622863637200451169 /* Frameworks */,
 				27DF0A632863637200451169 /* Resources */,
+				579E90D5B76C24BD9361B2A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,18 +206,64 @@
 				27DF0A752863637600451169 /* LaunchScreen.storyboard in Resources */,
 				27DF0A722863637600451169 /* Assets.xcassets in Resources */,
 				27DF0A702863637200451169 /* Main.storyboard in Resources */,
+				2701A48C2871FC3400EB98FF /* HomeScreenPersonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		579E90D5B76C24BD9361B2A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebAcademy Coursework/Pods-WebAcademy Coursework-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebAcademy Coursework/Pods-WebAcademy Coursework-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebAcademy Coursework/Pods-WebAcademy Coursework-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5CD61DBDE4A99C516FE8458 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebAcademy Coursework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27DF0A612863637200451169 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27DF0A6D2863637200451169 /* ViewController.swift in Sources */,
+				27DF0A6D2863637200451169 /* HomeScreenController.swift in Sources */,
+				2701A48B2871FC3400EB98FF /* HomeScreenPersonTableViewCell.swift in Sources */,
 				27DF0A692863637200451169 /* AppDelegate.swift in Sources */,
+				2728BCF128735C5F003490C0 /* User.swift in Sources */,
+				2728BCF42873710A003490C0 /* API.swift in Sources */,
 				27DF0A6B2863637200451169 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,13 +406,16 @@
 		};
 		27DF0A7A2863637600451169 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFE8E03690AF285843596091 /* Pods-WebAcademy Coursework.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VCC283F6L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WebAcademy Coursework/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Friendomizer;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -310,13 +437,16 @@
 		};
 		27DF0A7B2863637600451169 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 481F4661C2903D6BE1489645 /* Pods-WebAcademy Coursework.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VCC283F6L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WebAcademy Coursework/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Friendomizer;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
