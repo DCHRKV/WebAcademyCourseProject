@@ -11,6 +11,7 @@
 		2701A48C2871FC3400EB98FF /* HomeScreenPersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2701A48A2871FC3400EB98FF /* HomeScreenPersonTableViewCell.xib */; };
 		2728BCF128735C5F003490C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728BCF028735C5F003490C0 /* User.swift */; };
 		2728BCF42873710A003490C0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728BCF32873710A003490C0 /* API.swift */; };
+		2766AEF2288152C300A119DC /* PersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766AEF1288152C300A119DC /* PersonInfoViewController.swift */; };
 		27DF0A692863637200451169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF0A682863637200451169 /* AppDelegate.swift */; };
 		27DF0A6B2863637200451169 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF0A6A2863637200451169 /* SceneDelegate.swift */; };
 		27DF0A6D2863637200451169 /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF0A6C2863637200451169 /* HomeScreenController.swift */; };
@@ -26,6 +27,7 @@
 		2701A48A2871FC3400EB98FF /* HomeScreenPersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenPersonTableViewCell.xib; sourceTree = "<group>"; };
 		2728BCF028735C5F003490C0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2728BCF32873710A003490C0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2766AEF1288152C300A119DC /* PersonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoViewController.swift; sourceTree = "<group>"; };
 		27DF0A652863637200451169 /* WebAcademy Coursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebAcademy Coursework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF0A682863637200451169 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27DF0A6A2863637200451169 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				27DF0A6C2863637200451169 /* HomeScreenController.swift */,
 				2701A4892871FC3400EB98FF /* HomeScreenPersonTableViewCell.swift */,
+				2766AEF1288152C300A119DC /* PersonInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				27DF0A692863637200451169 /* AppDelegate.swift in Sources */,
 				2728BCF128735C5F003490C0 /* User.swift in Sources */,
 				2728BCF42873710A003490C0 /* API.swift in Sources */,
+				2766AEF2288152C300A119DC /* PersonInfoViewController.swift in Sources */,
 				27DF0A6B2863637200451169 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

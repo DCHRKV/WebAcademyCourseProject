@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeScreenPersonTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!

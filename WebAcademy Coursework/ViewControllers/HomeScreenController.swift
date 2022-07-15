@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 class HomeScreenController: UIViewController {
-
+    
     
     @IBOutlet weak var homescreenTableView: UITableView!
     
@@ -28,6 +28,11 @@ class HomeScreenController: UIViewController {
         homescreenTableView.register(UINib(nibName: "HomeScreenPersonTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeScreenPersonTableViewCell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
 }
 
 extension HomeScreenController: UITableViewDelegate,UITableViewDataSource {
@@ -44,5 +49,17 @@ extension HomeScreenController: UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "PersonInfoViewController", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PersonInfoViewController" {
+            guard let personInfoVC = segue.destination as? PersonInfoViewController else { return }
+            guard let indexPath = sender as? IndexPath else { return }
+            let user = apiController.users[indexPath.row]
+            personInfoVC.user = user
+        }
+    }
 }
 
