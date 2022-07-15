@@ -16,14 +16,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KqB-w0-Pzm">
-                        <rect key="frame" x="20" y="20" width="85" height="85"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KqB-w0-Pzm">
+                        <rect key="frame" x="15" y="20" width="90" height="90"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="85" id="1bl-T8-GGn"/>
+                            <constraint firstAttribute="width" constant="90" id="1bl-T8-GGn"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <integer key="value" value="42"/>
+                                <integer key="value" value="45"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
@@ -36,12 +37,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="bVj-Qq-Tpy" firstAttribute="top" secondItem="KqB-w0-Pzm" secondAttribute="top" id="GsK-0l-RER"/>
-                    <constraint firstItem="bVj-Qq-Tpy" firstAttribute="bottom" secondItem="KqB-w0-Pzm" secondAttribute="bottom" id="UxW-Wo-UN8"/>
+                    <constraint firstItem="bVj-Qq-Tpy" firstAttribute="bottom" secondItem="KqB-w0-Pzm" secondAttribute="bottom" constant="-5" id="UxW-Wo-UN8"/>
                     <constraint firstItem="bVj-Qq-Tpy" firstAttribute="leading" secondItem="KqB-w0-Pzm" secondAttribute="trailing" constant="54" id="VIz-VW-biB"/>
                     <constraint firstAttribute="trailing" secondItem="bVj-Qq-Tpy" secondAttribute="trailing" constant="20" id="YSo-Xv-nnG"/>
                     <constraint firstItem="KqB-w0-Pzm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Zxt-oJ-z9A"/>
-                    <constraint firstAttribute="bottom" secondItem="KqB-w0-Pzm" secondAttribute="bottom" constant="20" id="a27-Sg-L0w"/>
-                    <constraint firstItem="KqB-w0-Pzm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="obD-Ea-WKb"/>
+                    <constraint firstAttribute="bottom" secondItem="KqB-w0-Pzm" secondAttribute="bottom" constant="15" id="a27-Sg-L0w"/>
+                    <constraint firstItem="KqB-w0-Pzm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="obD-Ea-WKb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

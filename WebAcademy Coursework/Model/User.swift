@@ -18,12 +18,20 @@ struct UserResult: Decodable {
 struct User: Decodable {
     var name: Name
     var picture: Picture
+    var dob: Dob
+    var phone: String
+    var gender: String
+    var email: String
 }
 
 struct Name: Decodable {
     var title: String
     var first: String
     var last: String
+}
+
+struct Dob: Decodable {
+    var date: String
 }
 
 struct Picture: Decodable {
