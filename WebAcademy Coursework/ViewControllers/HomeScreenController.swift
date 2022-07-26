@@ -10,54 +10,59 @@ import SDWebImage
 
 class HomeScreenController: UIViewController {
     
-    
     @IBOutlet weak var homescreenTableView: UITableView!
     
-    let apiController = API()
+    private let personInfoVC_ID = "PersonInfoViewController"
+    private let homeScreenPersonTableViewCell = "HomeScreenPersonTableViewCell"
+    private var users = [User]()
+    private let apiController = API.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        apiController.getUsers { (error) in
-            if let error = error {
-                print("Error of data task: \(error)")
-            }
+        getUsers()
+        homescreenTableView.register(UINib(nibName: homeScreenPersonTableViewCell, bundle: nil), forCellReuseIdentifier: homeScreenPersonTableViewCell)
+    }
+    
+    private func getUsers() {
+        apiController.getUsers { [weak self] newUsers in
+            guard let self = self else { return }
+            
+            self.users += newUsers
+            
             DispatchQueue.main.async {
                 self.homescreenTableView.reloadData()
             }
         }
-        homescreenTableView.register(UINib(nibName: "HomeScreenPersonTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeScreenPersonTableViewCell")
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
 }
 
 extension HomeScreenController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return apiController.users.count
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = homescreenTableView.dequeueReusableCell(withIdentifier: "HomeScreenPersonTableViewCell", for: indexPath) as? HomeScreenPersonTableViewCell else { return UITableViewCell()}
-        let user = apiController.users[indexPath.row]
-        guard let imageData = try? Data(contentsOf: user.picture.medium) else { fatalError() }
-        cell.nameLabel?.text = user.name.title + " " + user.name.first + " " + user.name.last
-        cell.avatarImageView?.image = UIImage(data: imageData)
+        guard let cell = homescreenTableView.dequeueReusableCell(withIdentifier: homeScreenPersonTableViewCell, for: indexPath) as? HomeScreenPersonTableViewCell else { return UITableViewCell() }
+        let user = users[indexPath.row]
+        cell.setup(user: user)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "PersonInfoViewController", sender: indexPath)
+        self.performSegue(withIdentifier: personInfoVC_ID, sender: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == users.count - 3 {
+            getUsers()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PersonInfoViewController" {
-            guard let personInfoVC = segue.destination as? PersonInfoViewController else { return }
-            guard let indexPath = sender as? IndexPath else { return }
-            let user = apiController.users[indexPath.row]
+        if segue.identifier == personInfoVC_ID {
+            guard let personInfoVC = segue.destination as? PersonInfoViewController, let indexPath = sender as? IndexPath else { return }
+            let user = users[indexPath.row]
             personInfoVC.user = user
         }
     }

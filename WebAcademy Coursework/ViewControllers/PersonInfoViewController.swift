@@ -29,13 +29,18 @@ class PersonInfoViewController: UIViewController {
     @IBOutlet weak var personInfoEmailLabel: UILabel!
     
     
+    private func getDateFormat(input: String) -> String {
+        return input.count > 9 ? String(input.prefix(10)) : ""
+        
+    }
+    
     func updateViews() {
         guard isViewLoaded,
               let user = user else { return }
         title = user.name.first
         personInfoFullNameLabel.text = user.name.title + " " + user.name.first + " " + user.name.last
         personInfoGenderLabel.text = user.gender
-        personInfoDobLabel.text = user.dob.date
+        personInfoDobLabel.text = getDateFormat(input: user.dob.date)
         personInfoPhoneNumberView.text = user.phone
         guard let imageData = try? Data(contentsOf: user.picture.large) else { fatalError() }
         personInfoAvatarImageView.image = UIImage(data: imageData)

@@ -15,6 +15,10 @@ class HomeScreenPersonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
     
+    func setup(user:User) {
+        guard let imageData = try? Data(contentsOf: user.picture.medium) else { fatalError() }
+        nameLabel?.text = user.name.title + " " + user.name.first + " " + user.name.last
+        avatarImageView?.image = UIImage(data: imageData)
+    }
 }
