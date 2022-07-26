@@ -66,19 +66,19 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zot-AD-2nw">
-                                <rect key="frame" x="16" y="237" width="343" height="21"/>
+                                <rect key="frame" x="16" y="237" width="343" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="1o4-nG-Pya"/>
-                                    <constraint firstAttribute="height" constant="21" id="P0S-SQ-8FM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="1o4-nG-Pya"/>
+                                    <constraint firstAttribute="height" constant="30" id="P0S-SQ-8FM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBj-9x-UXY">
                                 <rect key="frame" x="16" y="295" width="343" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="Zdp-fV-bil"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="Zdp-fV-bil"/>
                                     <constraint firstAttribute="height" constant="21" id="mdx-DS-PkN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -90,7 +90,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="5YB-vh-uZR"/>
                                     <constraint firstAttribute="height" constant="21" id="HH4-Nu-VmK"/>
-                                    <constraint firstAttribute="width" constant="343" id="UYT-oh-TJx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="UYT-oh-TJx"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="qOj-YJ-CI3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -100,7 +100,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LR4-qX-L6T">
                                 <rect key="frame" x="16" y="266" width="343" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="hNk-Uq-tSJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="hNk-Uq-tSJ"/>
                                     <constraint firstAttribute="height" constant="21" id="oYM-Nc-hEv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -111,7 +111,7 @@
                                 <rect key="frame" x="16" y="353" width="343" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="EbT-d1-KUa"/>
-                                    <constraint firstAttribute="width" constant="343" id="UVu-Ja-uw6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="UVu-Ja-uw6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -138,7 +138,7 @@
                             <constraint firstItem="ot0-Ng-BA3" firstAttribute="leading" secondItem="Gs6-OR-4qa" secondAttribute="leading" constant="16" id="ojG-Lu-kBW"/>
                             <constraint firstItem="Gs6-OR-4qa" firstAttribute="trailing" secondItem="ot0-Ng-BA3" secondAttribute="trailing" constant="16" id="qRk-Eg-5Dh"/>
                             <constraint firstItem="ot0-Ng-BA3" firstAttribute="top" secondItem="WBj-9x-UXY" secondAttribute="bottom" constant="8" id="rmo-cg-fnZ"/>
-                            <constraint firstItem="LR4-qX-L6T" firstAttribute="top" secondItem="zot-AD-2nw" secondAttribute="bottom" constant="8" id="siJ-RG-xFt"/>
+                            <constraint firstItem="LR4-qX-L6T" firstAttribute="top" secondItem="zot-AD-2nw" secondAttribute="bottom" constant="-1" id="siJ-RG-xFt"/>
                             <constraint firstItem="Xdp-bu-1ne" firstAttribute="leading" secondItem="Gs6-OR-4qa" secondAttribute="leading" constant="127" id="teI-jD-yng"/>
                             <constraint firstItem="zot-AD-2nw" firstAttribute="leading" secondItem="Gs6-OR-4qa" secondAttribute="leading" constant="16" id="v1N-GK-66G"/>
                             <constraint firstItem="ot0-Ng-BA3" firstAttribute="top" secondItem="WBj-9x-UXY" secondAttribute="bottom" constant="8" id="z2L-MD-UgH"/>

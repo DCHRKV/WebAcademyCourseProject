@@ -9,30 +9,30 @@ import Foundation
 
 class API {
     
-    var users: [User] = []
+    static let shared = API()
+    private var currentPage = 1
+    let baseURL = "https://randomuser.me/api/"
     
-    let baseURL = URL(string: "https://randomuser.me/api/?format=json&results=20")!
-    typealias CompletionHandler = (Error?) -> Void
-    
-    func getUsers(completion: @escaping CompletionHandler = { _ in }) {
-        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+    func getUsers(completion: @escaping ([User])->(Void)) {
+        let urlString = baseURL + "?" + "format=json" + "&" + "results=20" + "&" + "page=" + String(self.currentPage)
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 print("Error getting users: \(error)")
             }
             guard let data = data else {
                 print("No data returned from data task.")
-                completion(nil)
                 return
             }
             do {
                 let newUsers = try JSONDecoder().decode(UserResult.self, from: data)
                 print(newUsers)
-                self.users = newUsers.results
+                self.currentPage += 1
+                completion(newUsers.results)
             } catch {
                 print("Error decoding users: \(error)")
-                completion(error)
             }
-            completion(nil)
         }.resume()
     }
     
