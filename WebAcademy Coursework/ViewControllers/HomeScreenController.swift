@@ -11,6 +11,8 @@ import SDWebImage
 class HomeScreenController: UIViewController {
     
     @IBOutlet weak var homescreenTableView: UITableView!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var groupUsersButton: UIButton!
     
     private let personInfoVC_ID = "PersonInfoViewController"
     private let homeScreenPersonTableViewCell = "HomeScreenPersonTableViewCell"
@@ -21,7 +23,34 @@ class HomeScreenController: UIViewController {
         super.viewDidLoad()
         getUsers()
         homescreenTableView.register(UINib(nibName: homeScreenPersonTableViewCell, bundle: nil), forCellReuseIdentifier: homeScreenPersonTableViewCell)
+        addButton.isHidden = true
+
     }
+    
+    enum groupUsersButtonStatus {
+        case groupUsers
+        case close
+        
+    }
+    
+    @IBAction func groupUsersButton(_ sender: UIBarButtonItem) {
+        self.homescreenTableView.isEditing = true
+        self.homescreenTableView.allowsMultipleSelectionDuringEditing = true
+        addButton.isHidden = false
+        func tableView(_ tableView: UITableView,shouldBeginMultipleSelectionInteractionAt indexPath: IndexPath) -> Bool {
+                true
+        }
+        
+        func tableView(_ tableView: UITableView, didBeginMultipleSelectionInteractionAt: IndexPath) {
+            homescreenTableView.setEditing(true, animated: true)
+        }
+        
+        func tableViewDidEndMultipleSelectionInteraction(_ tableView: UITableView) {
+            print(" \(#function)")
+        }
+    }
+    
+
     
     private func getUsers() {
         apiController.getUsers { [weak self] newUsers in
@@ -37,6 +66,7 @@ class HomeScreenController: UIViewController {
 }
 
 extension HomeScreenController: UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
