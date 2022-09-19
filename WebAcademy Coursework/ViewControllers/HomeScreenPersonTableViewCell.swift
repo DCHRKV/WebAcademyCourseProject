@@ -14,6 +14,7 @@ class HomeScreenPersonTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
     
     func setup(user:User) {

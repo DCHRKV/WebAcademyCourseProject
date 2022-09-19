@@ -19,6 +19,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pTD-7U-aqZ">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeScreenPersonTableViewCell" id="5CG-Ed-08p" customClass="HomeScreenPersonTableViewCell" customModule="WebAcademy_Coursework" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5CG-Ed-08p" id="clN-qk-K41">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="QrQ-6u-SNU"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="D4A-z1-cFd"/>
@@ -34,8 +44,33 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pTD-7U-aqZ" secondAttribute="bottom" id="ym4-U1-FVW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Friendomizer" id="QSE-8H-y5D"/>
+                    <navigationItem key="navigationItem" title="Friendomizer" id="QSE-8H-y5D">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="8mj-h3-89F">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="geM-Ar-4uZ">
+                                <rect key="frame" x="16" y="5" width="83" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Gyh-2Z-tzl">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Z18-Dh-cdo">
+                                <rect key="frame" x="241.66666666666666" y="5" width="117.33333333333334" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Group users"/>
+                                <state key="selected" title="Close"/>
+                                <state key="highlighted" title="Close"/>
+                                <connections>
+                                    <action selector="groupUsersButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sr4-3R-XDg"/>
+                                    <action selector="groupUsersButtonClose:" destination="BYZ-38-t0r" eventType="touchCancel" id="bgc-2y-cwz"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="geM-Ar-4uZ" id="dpL-nz-XxG"/>
+                        <outlet property="groupUsersButton" destination="Z18-Dh-cdo" id="lGP-1Q-j4T"/>
                         <outlet property="homescreenTableView" destination="pTD-7U-aqZ" id="VoC-eu-FBL"/>
                         <segue destination="9fr-XM-B4J" kind="show" identifier="PersonInfoViewController" id="YKE-1B-tY8"/>
                     </connections>
@@ -47,7 +82,6 @@
         <!--Person Info View Controller-->
         <scene sceneID="dZz-Jx-hxa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rc3-FB-LFi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PersonInfoViewController" id="9fr-XM-B4J" customClass="PersonInfoViewController" customModule="WebAcademy_Coursework" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ota-Bg-S4a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -154,6 +188,7 @@
                         <outlet property="personInfoPhoneNumberView" destination="ot0-Ng-BA3" id="rwu-n1-37h"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rc3-FB-LFi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1685.5999999999999" y="93.842364532019715"/>
         </scene>
@@ -176,7 +211,11 @@
             <point key="canvasLocation" x="20" y="93.842364532019715"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="linkColor"/>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

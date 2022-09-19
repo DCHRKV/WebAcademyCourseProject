@@ -8,20 +8,72 @@
 import UIKit
 import SDWebImage
 
+
 class HomeScreenController: UIViewController {
     
     @IBOutlet weak var homescreenTableView: UITableView!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var groupUsersButton: UIButton!
     
     private let personInfoVC_ID = "PersonInfoViewController"
     private let homeScreenPersonTableViewCell = "HomeScreenPersonTableViewCell"
     private var users = [User]()
     private let apiController = API.shared
+    var buttonSwitched : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getUsers()
         homescreenTableView.register(UINib(nibName: homeScreenPersonTableViewCell, bundle: nil), forCellReuseIdentifier: homeScreenPersonTableViewCell)
+        addButton.isHidden = true
+        groupUsersButton.isSelected = false
+
     }
+    
+    enum groupUsersButtonStatus {
+        case groupUsers
+        case close
+        
+    }
+    
+    @IBAction func groupUsersButton(_ sender: UIBarButtonItem) {
+        self.buttonSwitched = !self.buttonSwitched
+        if self.buttonSwitched {
+            self.homescreenTableView.allowsMultipleSelectionDuringEditing = true
+            self.homescreenTableView.isEditing = true
+            addButton.isHidden = false
+            groupUsersButton.isSelected = true
+            func tableView(_ tableView: UITableView,shouldBeginMultipleSelectionInteractionAt indexPath: IndexPath) -> Bool {
+                true
+            }
+            
+            func tableView(_ tableView: UITableView, didBeginMultipleSelectionInteractionAt: IndexPath) {
+                homescreenTableView.setEditing(true, animated: true)
+            }
+            
+            func tableViewDidEndMultipleSelectionInteraction(_ tableView: UITableView) {
+                print(" \(#function)")
+            }
+        } else {
+            self.homescreenTableView.allowsMultipleSelectionDuringEditing = false
+            self.homescreenTableView.isEditing = false
+            addButton.isHidden = true
+            groupUsersButton.isSelected = false
+            func tableView(_ tableView: UITableView,shouldBeginMultipleSelectionInteractionAt indexPath: IndexPath) -> Bool {
+                false
+            }
+            
+            func tableView(_ tableView: UITableView, didBeginMultipleSelectionInteractionAt: IndexPath) {
+                homescreenTableView.setEditing(false, animated: false)
+            }
+            
+            func tableViewDidEndMultipleSelectionInteraction(_ tableView: UITableView) {
+                print(" \(#function)")
+            }
+        }
+    }
+    
+
     
     private func getUsers() {
         apiController.getUsers { [weak self] newUsers in
@@ -37,6 +89,7 @@ class HomeScreenController: UIViewController {
 }
 
 extension HomeScreenController: UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -52,12 +105,13 @@ extension HomeScreenController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: personInfoVC_ID, sender: indexPath)
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == users.count - 3 {
             getUsers()
         }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == personInfoVC_ID {
