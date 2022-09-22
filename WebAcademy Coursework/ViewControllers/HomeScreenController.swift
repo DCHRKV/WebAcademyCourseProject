@@ -15,10 +15,12 @@ class HomeScreenController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var groupUsersButton: UIButton!
     
+    
     private let personInfoVC_ID = "PersonInfoViewController"
     private let homeScreenPersonTableViewCell = "HomeScreenPersonTableViewCell"
     private var users = [User]()
     private let apiController = API.shared
+    var headerName = ""
     var buttonSwitched : Bool = false
     
     override func viewDidLoad() {
@@ -27,12 +29,6 @@ class HomeScreenController: UIViewController {
         homescreenTableView.register(UINib(nibName: homeScreenPersonTableViewCell, bundle: nil), forCellReuseIdentifier: homeScreenPersonTableViewCell)
         addButton.isHidden = true
         groupUsersButton.isSelected = false
-
-    }
-    
-    enum groupUsersButtonStatus {
-        case groupUsers
-        case close
         
     }
     
@@ -73,7 +69,23 @@ class HomeScreenController: UIViewController {
         }
     }
     
+    @IBAction func addButton(_ sender: UIButton) {
+        let groupCreationAlertController = UIAlertController(title: "Create new group", message: "Enter group name", preferredStyle: .alert)
+        let groupCreationAlertOkAction = UIAlertAction(title: "OK", style: .default) { headerCreation in
+            func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+                self.headerName = "Group 1"
+                return "\(self.headerName)"
+            }
+            self.homescreenTableView.reloadData()
 
+        }
+        groupCreationAlertController.addAction(groupCreationAlertOkAction)
+        present(groupCreationAlertController, animated: true, completion: nil)
+        groupCreationAlertController.addTextField { (groupNameFextField) in
+            groupNameFextField.placeholder = "Group name"
+        }
+        
+    }
     
     private func getUsers() {
         apiController.getUsers { [weak self] newUsers in
@@ -94,6 +106,10 @@ extension HomeScreenController: UITableViewDelegate,UITableViewDataSource {
         return users.count
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = homescreenTableView.dequeueReusableCell(withIdentifier: homeScreenPersonTableViewCell, for: indexPath) as? HomeScreenPersonTableViewCell else { return UITableViewCell() }
         let user = users[indexPath.row]
@@ -105,13 +121,16 @@ extension HomeScreenController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: personInfoVC_ID, sender: indexPath)
     }
-
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == users.count - 3 {
             getUsers()
         }
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "\(headerName)"
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == personInfoVC_ID {
